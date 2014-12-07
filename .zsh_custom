@@ -1,0 +1,37 @@
+# NPM tab completion
+. <(npm completion)
+
+# Set JAVA_HOME env variable
+export JAVA_HOME=$(/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home -v 1.7)
+
+export PATH="$HOME/.node/bin:$PATH"
+
+# Docker-Machine env variables
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/arunhs/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
+
+# Aliases
+alias localapi="GRADLE_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n' ./gradlew jettyRun"
+
+alias zshconfig="sublime ~/.zshrc"
+alias zshcustom="sublime ~/.zshrc_custom"
+alias ohmyzsh="sublime ~/.oh-my-zsh"
+
+alias build="docker-compose build"
+alias up="docker-compose up"
+alias start="docker-machine start default"
+
+alias cls="clear"
+alias gst="git status"
+alias g="git"
+
+# Uncommment if using git alias plugin for oh-my-zsh
+# unalias gg
+eval "$(thefuck --alias)"
+eval "$(grunt --completion=zsh)"
+
+# Fix tab-completion text bug for some oh-myzsh themes
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
