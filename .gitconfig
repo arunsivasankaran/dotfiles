@@ -1,0 +1,7 @@
+[user]
+	name = Arun Sivasankaran
+	email = arunparthiban@gmail.com
+[core]
+	editor = nano
+[push]
+	default = simple
